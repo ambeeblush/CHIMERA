@@ -211,7 +211,8 @@ def main(argv=None):
 
     if args.dry_run:
         ok = dry_run(jobs, cfg, data_root=args.data_root,
-                     output_dir=args.output_dir)
+                     output_dir=args.output_dir,
+                     formats=args.format, quality=args.quality)
         return EXIT_OK if ok else EXIT_SOME_FAILED
 
     if args.cle_device:

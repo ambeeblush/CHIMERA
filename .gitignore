@@ -113,6 +113,7 @@ ipython_config.py
 #   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
 #   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
 # pdm.lock
+temp_auto_push.bat
 # pdm.toml
 .pdm-python
 .pdm-build/
@@ -199,7 +200,6 @@ cython_debug/
 #   that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
 #   and can be added to the global gitignore or merged into this file. However, if you prefer, 
 #   you could uncomment the following to ignore the entire vscode folder
-# .vscode/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
 
@@ -230,3 +230,4 @@ logs/
 EOF
 
 
+branch_structure.json
