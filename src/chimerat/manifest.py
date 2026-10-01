@@ -36,6 +36,7 @@ import csv
 import logging
 from dataclasses import dataclass, field
 from pathlib import Path
+from chimerat.panels import normalize_formats
 
 logger = logging.getLogger(__name__)
 
@@ -238,9 +239,14 @@ def _build_job(cells, row, root, cfg, processed_sections, check_files):
     )
 
 
-def dry_run(jobs, cfg, data_root=None, output_dir="out"):
-    """Print what would be produced, without rendering anything."""
+def dry_run(jobs, cfg, data_root=None, output_dir="out", formats="mov", quality=6):
+    """Print what would be produced, without rendering anything.
+
+    `formats` and `quality` must match what `render_and_save()` will use, so
+    the file names listed here are the ones a real run would write.
+    """
     output_dir = Path(output_dir)
+    formats = normalize_formats(formats)
     for job in jobs:
         panels = job.panels or tuple(sorted(cfg.panels))
         crop = ", ".join(
@@ -253,7 +259,9 @@ def dry_run(jobs, cfg, data_root=None, output_dir="out"):
             print(f"    {section:10s} {file}")
         print(f"    crop       {crop}")
         for panel in panels:
-            print(f"    -> {output_dir / f'{job.name}_{panel}.mov'}")
+            stem = f"{job.name}_{panel}_q{quality}"
+            for ext in formats:
+                print(f"    -> {output_dir / f'{stem}.{ext}'}")
         print()
     print(f"{len(jobs)} rows")
     return True
