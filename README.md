@@ -231,6 +231,7 @@ In the meantime, these are published papers that include my image analysis workf
   <br>3D analysis of mitochondrial enrichment as a function of the position of Wnt-coated beads. The pipeline (**POLARIS**) is the next one I'm releasing - *stay tuned!*
 - Mulè P., Fernandez-Perez D., [...], **Dondi A.**, [...], Pasini D. (2024). *WNT oncogenic transcription requires MYC suppression of lysosomal activity and EPCAM stabilization in gastric tumors.* Gastroenterology 167(5):903–918. [doi:10.1053/j.gastro.2024.06.029](https://doi.org/10.1053/j.gastro.2024.06.029)
 
+Full list on [ORCID](https://orcid.org/0000-0001-7594-2105).
 
 ## References
 
