@@ -1,0 +1,3 @@
+crop_id,raw_img_path,mito_output,series_index,z0,z1,y0,y1,x0,x1,panels,notes
+sample1,input_imgs/raw/Image1_bin_mito_ph_dapi.tif,input_imgs/elab/Image1_bin_elab.tif,1,8,,29,371,608,950,,
+sample2,input_imgs/raw/Image2_bin_mito_ph_dapi.tif,input_imgs/elab/Image2_bin_elab.tif,1,8,,418,859,536,977,,

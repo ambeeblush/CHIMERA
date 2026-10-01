@@ -1,0 +1,113 @@
+# chimera — configurazione di default
+# Ogni parametro è obbligatorio: non esistono default nascosti nel codice.
+#
+# clip: per ogni canale [lo, hi] oppure null.
+#   - i due valori sono sia gli estremi di np.clip sia il range su cui il
+#     canale viene normalizzato (come Brightness/Contrast di ImageJ)
+#   - se il blocco `clip` è presente deve elencare TUTTI i canali della
+#     sezione: `null` significa "questo canale non si clippa", ed è una
+#     scelta scritta, non un default implicito
+#   - forma estesa per i percentili: {lo: 1, hi: 99.5, mode: percentile}
+#
+# colormaps: colore di ogni canale, usato sia per il merge sia per le etichette.
+#   - nomi ImageJ: green, magenta, cyan, blue, red, yellow, grays
+#   - oppure una tripletta [R, G, B] 0-255
+#   - non esiste `null`: un canale in scala di grigi si scrive 'grays'
+
+config_version: 1
+
+acquisition:
+  channels:
+    mito: 0
+    ph: 1
+    dapi: 2
+  channel_labels:
+    mito: Mitochondria
+    ph: Actin
+    dapi: DAPI
+  colormaps:
+    mito: magenta
+    ph: green
+    dapi: blue
+  clip:
+    mito: [100, 1000]
+    ph: [500, 10000]
+    dapi: [300, 3500]
+
+mito_output:
+  channels:
+    cyto: 0
+    skels: 1
+    distance: 2
+  channel_labels:
+    cyto: Cells
+    skels: Mito Skels
+    distance: Mito Distances
+  colormaps:
+    cyto: grays
+    skels: grays
+    distance: inferno
+  clip:
+    cyto: [0,10]
+    skels: [0,1]         # maschera binaria
+    distance: [0, 12]   
+
+
+# --------------------------------------------------------------------------- #
+# Pannelli: quali riquadri, in che ordine, con quali canali.
+#
+# Ogni canale è una coordinata {section, role}: clip, colormap ed etichetta
+# vengono lette da lì, non si ripetono qui.
+#   title        sovrascrive le etichette dei canali (es. MERGE)
+#   scalebar_on  first | last | all | <indice> | null
+#   filename_on  idem
+# Aggiungere un pannello è un blocco di YAML, non una funzione Python.
+# --------------------------------------------------------------------------- #
+
+panels:
+
+  check_acquisition:
+    tiles:
+      - title: Mitochondria
+        channels: [{section: acquisition, role: mito}]       
+      - title: Actin
+        channels: [{section: acquisition, role: ph}]
+      - title: DAPI
+        channels: [{section: acquisition, role: dapi}]
+      - title: MERGE
+        channels: [{section: acquisition, role: mito},
+                    {section: acquisition, role: ph},
+                    {section: acquisition, role: dapi}]
+    gutter_px: 8
+    scalebar_on: last
+    filename_on: first    
+
+  segmentation:
+    tiles:
+      - title: Actin + DAPI
+        channels: [{section: acquisition, role: ph},
+                   {section: acquisition, role: dapi}]
+      - title: Cell segmentation
+        channels: [{section: mito_output, role: cyto}]
+      - title: MERGE
+        channels: [{section: acquisition, role: ph},
+                   {section: mito_output, role: cyto}]
+    gutter_px: 8
+    scalebar_on: last
+    filename_on: first
+
+    
+  mito_skeleton:
+    tiles:
+      - title: Mitochondria
+        channels: [{section: acquisition, role: mito}]
+      - title: Skeleton
+        channels: [{section: mito_output, role: skels}]
+      - title: Distance map
+        channels: [{section: mito_output, role: distance}]
+      - title: MERGE
+        channels: [{section: acquisition, role: mito},
+                   {section: mito_output, role: skels}]
+    gutter_px: 8
+    scalebar_on: last
+    filename_on: first

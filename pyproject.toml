@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chimerat"
+version = "0.1.0"
+description = "3D-rendered movies of raw microscopy data and analysis results, side by side"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Ambra Dondi" }]
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-image",
+    "pillow",
+    "pyyaml",
+    "tifffile",
+    "matplotlib",
+    "imageio[ffmpeg]",
+    "bioio",
+    "bioio-tifffile",
+    "bioio-nd2",
+    "pyclesperanto-prototype",
+]
+
+[project.scripts]
+chimera = "chimerat.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
