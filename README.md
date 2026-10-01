@@ -212,7 +212,7 @@ The analysis outputs shown here (cell segmentation, mitochondrial skeletons, dis
 
 ## About me
 
-I'm Ambra Dondi, a **microscopist** and **bioimage analyst** at the Imaging Unit of IEO (European Institute of Oncology) in Milan. I'm a biologist by training, with a PhD in Systems Medicine. Day to day, I build Python pipelines for 3D fluorescence microscopy analysis, to extract numbers, and therefore insights, from images. I also teach image analysis to PhD students of SEMM (European School of Molecular Medicine) and to master's students.
+I'm Ambra Dondi, a **microscopist** and **bioimage analyst** at the Imaging Unit of IEO (European Institute of Oncology) in Milan. I'm a biologist by training, with a PhD in Molecular Oncology. Day to day, I build Python pipelines for 3D fluorescence microscopy analysis, to extract numbers, and therefore insights, from images. I also teach image analysis to PhD students of SEMM (European School of Molecular Medicine) and to master's students.
 
 I'm interested in roles where I can bring my image analysis skills to other domains: at the end of the day, images are images, whether they come from a microscope, a satellite, a whole-slide scanner in a pathology lab or a camera on a production line. The problems are surprisingly similar: noisy signal, objects to segment, measurements that have to be reliable, and results that people need to be able to trust. That last part, showing the result on top of the raw data, is exactly what this repo is about.
 
