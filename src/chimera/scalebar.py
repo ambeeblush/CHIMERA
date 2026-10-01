@@ -25,7 +25,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from skimage.draw import rectangle
  
-from chimerat.colormaps import to_rgb
+from chimera.colormaps import to_rgb
  
  
 _FONT_CANDIDATES = [

@@ -21,9 +21,9 @@ import numpy as np
 from pathlib import Path
 from scipy.ndimage import rotate as ndi_rotate, zoom as ndi_zoom
 
-from chimerat.clipping import clip_plane
-from chimerat.colormaps import apply_colormap
-from chimerat.scalebar import add_channel_labels, add_scalebar
+from chimera.clipping import clip_plane
+from chimera.colormaps import apply_colormap
+from chimera.scalebar import add_channel_labels, add_scalebar
 
 logger = logging.getLogger(__name__)
 

@@ -40,8 +40,8 @@ from typing import Any
 
 import yaml
 
-from chimerat.colormaps import COLORMAP_NAMES, ColormapError
-from chimerat.colormaps import normalize as normalize_colormap
+from chimera.colormaps import COLORMAP_NAMES, ColormapError
+from chimera.colormaps import normalize as normalize_colormap
 
 logger = logging.getLogger(__name__)
 

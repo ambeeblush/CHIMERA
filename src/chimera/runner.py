@@ -28,8 +28,8 @@ from pathlib import Path
 
 import numpy as np
 
-from chimerat.manifest import ManifestError
-from chimerat.panels import normalize_formats, render_and_save
+from chimera.manifest import ManifestError
+from chimera.panels import normalize_formats, render_and_save
 
 logger = logging.getLogger(__name__)
 

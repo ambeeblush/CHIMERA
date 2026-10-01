@@ -5,7 +5,7 @@
             --manifest input_csv/csv_example.csv \\
             --output-dir out
 
-(equivalent to `python -m chimerat.cli ...`). Run `chimera --help` for all options.
+(equivalent to `python -m chimera.cli ...`). Run `chimera --help` for all options.
 
 Built to run on a laptop as well as inside a SLURM job array:
 
@@ -28,7 +28,7 @@ import shutil
 import sys
 from pathlib import Path
 
-logger = logging.getLogger("chimerat.cli")
+logger = logging.getLogger("chimera.cli")
 
 EXIT_OK = 0
 EXIT_SOME_FAILED = 1
@@ -181,10 +181,10 @@ def main(argv=None):
 
     # import qui dentro: un errore negli argomenti non deve aspettare il
     # caricamento di tutto lo stack scientifico
-    from chimerat.config import Config, ConfigError
-    from chimerat.manifest import read_manifest, dry_run, ManifestError
-    from chimerat.panels import cle_resampler
-    from chimerat.runner import run_manifest
+    from chimera.config import Config, ConfigError
+    from chimera.manifest import read_manifest, dry_run, ManifestError
+    from chimera.panels import cle_resampler
+    from chimera.runner import run_manifest
 
     try:
         shard, num_shards = resolve_sharding(args)
