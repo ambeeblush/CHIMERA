@@ -54,8 +54,8 @@ def build_parser():
     required.add_argument("--output-dir", required=True, type=Path,
                           help="cartella di destinazione")
     required.add_argument("--data-root", type=Path, default=None,
-                          help="radice dei dati; sovrascrive paths.data_root "
-                               "del config, utile per girare su una copia locale")
+                          help="cartella da cui partono i percorsi relativi del "
+                               "manifest (di default: cartella corrente)")
 
     selection = p.add_argument_group("selezione")
     selection.add_argument("--panels", default=None,
