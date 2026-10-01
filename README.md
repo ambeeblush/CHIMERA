@@ -218,6 +218,20 @@ I'm interested in roles where I can bring my image analysis skills to other doma
 
 [LinkedIn](https://www.linkedin.com/in/ambra-dondi) · [ORCID](https://orcid.org/0000-0001-7594-2105) · [Email](mailto:ambra.dondi@hotmail.com)
 
+## Publications with my analyses
+
+Most of the pipelines I've built aren't public yet. In academic research, analysis code usually goes out together with or after the paper it was written for, and several of the projects I've worked on are still unpublished. CHIMERA is the first project I'm releasing, and the others will follow as their papers come out.
+
+In the meantime, these are published papers that include my image analysis workflows:
+
+- Chiesa A., Poli V., [...], **Dondi A.**, [...], Campaner S. (2026). *Functional genomic screens uncover FERMT2 as a critical regulator of YAP/TAZ-driven tumorigenicity.* Cell Death & Differentiation 33(9):1907–1922. [doi:10.1038/s41418-026-01694-w](https://doi.org/10.1038/s41418-026-01694-w)
+- Massari L.F., Finardi A., Visintin C., Calabrese E., **Dondi A.**, Visintin R. (2026). *Safeguarding genome integrity: Polo-like kinase Cdc5 and phosphatase Cdc14 orchestrate Topoisomerase II-mediated catenane resolution in mitosis.* Nucleic Acids Research 54(2):gkaf1509. [doi:10.1093/nar/gkaf1509](https://doi.org/10.1093/nar/gkaf1509)
+  <br>Quantification of Top2 abundance and distribution in expanded nuclear regions (Fig. 6F–G).
+- Eli S., Rauso G., [...], **Dondi A.**, [...], Mapelli M. (2025). *Localized Wnt-signaling promotes asymmetric NuMA-dependent oriented divisions and unequal apportioning of mitochondria.* Nature Communications 16:10690. [doi:10.1038/s41467-025-65775-z](https://doi.org/10.1038/s41467-025-65775-z)
+  <br>3D analysis of mitochondrial enrichment as a function of the position of Wnt-coated beads. The pipeline (**POLARIS**) is the next one I'm releasing - *stay tuned!*
+- Mulè P., Fernandez-Perez D., [...], **Dondi A.**, [...], Pasini D. (2024). *WNT oncogenic transcription requires MYC suppression of lysosomal activity and EPCAM stabilization in gastric tumors.* Gastroenterology 167(5):903–918. [doi:10.1053/j.gastro.2024.06.029](https://doi.org/10.1053/j.gastro.2024.06.029)
+
+
 ## References
 
 1. napari contributors (2019). *napari: a multi-dimensional image viewer for Python.* Zenodo. [doi:10.5281/zenodo.3555620](https://doi.org/10.5281/zenodo.3555620)
